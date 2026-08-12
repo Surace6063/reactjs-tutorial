@@ -2,7 +2,7 @@ const App = () => {
   const username = "Suresh Thapa"
   const a = 10
   const b = 20
-  const hobbies = ["coding", "treking", "swimming", "gaming", "coding"]
+  const hobbies = ["coding", "treking", "swimming", "gaming"]
   const fruits = ["apple", "banana", "orange", "mango"]
 
   // conditional rendering
