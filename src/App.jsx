@@ -1,16 +1,34 @@
 import AdminProfile from "./components/AdminProfile"
+import Counter from "./components/Counter"
+import Product from "./components/Product"
+import State from "./components/State"
 import UserProfile from "./components/UserProfile"
 
 const App = () => {
+  const productInfo = {
+    id: 101,
+    name: "Iphone 17 pro max",
+    price: 1100,
+    isAvaliable: false
+  }
+
+  // productInfo.id
+
   return (
     <div>
-       <UserProfile fullName="John Doe" age={25} address="ktm"  />
+       {/* <UserProfile fullName="John Doe" age={25} address="ktm"  />
        <UserProfile fullName="Hari Sharma" age={26} address="btk" />
        <UserProfile fullName="Alice Thapa" age={24} address="ktm" />
 
        <hr />
        <AdminProfile />
-       <AdminProfile />
+       <AdminProfile /> */}
+
+
+       {/* <Product productInfo={productInfo} /> */}
+
+       {/* <Counter /> */}
+       <State />
     </div>
   )
 }

@@ -1,3 +1,7 @@
 @import "tailwindcss";
 
 
+.btn{
+    @apply bg-slate-800 text-white px-6 py-2 rounded-md 
+    cursor-pointer hover:bg-slate-800/90
+}
