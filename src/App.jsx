@@ -1,8 +1,10 @@
 import AdminProfile from "./components/AdminProfile"
 import Counter from "./components/Counter"
 import Product from "./components/Product"
+import RegisterForm from "./components/RegisterForm"
 import State from "./components/State"
 import UserProfile from "./components/UserProfile"
+import { Toaster } from "react-hot-toast"
 
 const App = () => {
   const productInfo = {
@@ -16,6 +18,7 @@ const App = () => {
 
   return (
     <div>
+      <Toaster />
        {/* <UserProfile fullName="John Doe" age={25} address="ktm"  />
        <UserProfile fullName="Hari Sharma" age={26} address="btk" />
        <UserProfile fullName="Alice Thapa" age={24} address="ktm" />
@@ -28,7 +31,9 @@ const App = () => {
        {/* <Product productInfo={productInfo} /> */}
 
        {/* <Counter /> */}
-       <State />
+       {/* <State /> */}
+
+       <RegisterForm />
     </div>
   )
 }
