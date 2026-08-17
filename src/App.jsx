@@ -2,6 +2,7 @@ import AdminProfile from "./components/AdminProfile"
 import Counter from "./components/Counter"
 import Product from "./components/Product"
 import RegisterForm from "./components/RegisterForm"
+import RegisterForm2 from "./components/RegisterForm2"
 import State from "./components/State"
 import UserProfile from "./components/UserProfile"
 import { Toaster } from "react-hot-toast"
@@ -33,7 +34,8 @@ const App = () => {
        {/* <Counter /> */}
        {/* <State /> */}
 
-       <RegisterForm />
+       {/* <RegisterForm /> */}
+       <RegisterForm2 />
     </div>
   )
 }
