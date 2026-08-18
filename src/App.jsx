@@ -1,6 +1,7 @@
 import AdminProfile from "./components/AdminProfile"
 import Counter from "./components/Counter"
 import Product from "./components/Product"
+import ReactHookForm from "./components/ReactHookForm"
 import RegisterForm from "./components/RegisterForm"
 import RegisterForm2 from "./components/RegisterForm2"
 import State from "./components/State"
@@ -35,7 +36,8 @@ const App = () => {
        {/* <State /> */}
 
        {/* <RegisterForm /> */}
-       <RegisterForm2 />
+       {/* <RegisterForm2 /> */}
+       <ReactHookForm />
     </div>
   )
 }
