@@ -1,48 +1,95 @@
-import AdminProfile from "./components/AdminProfile"
-import Counter from "./components/Counter"
-import Product from "./components/Product"
-import ReactHookForm from "./components/ReactHookForm"
-import RegisterForm from "./components/RegisterForm"
-import RegisterForm2 from "./components/RegisterForm2"
-import State from "./components/State"
-import UserProfile from "./components/UserProfile"
-import { Toaster } from "react-hot-toast"
+import Navbar from "./components/Navbar"
+import {Routes,Route} from "react-router-dom"
+import HomePage from "./pages/HomePage"
+import AboutPage from "./pages/AboutPage"
+import ContactPage from "./pages/ContactPage"
+import PageNotFound from "./pages/PageNotFound"
 
 const App = () => {
-  const productInfo = {
-    id: 101,
-    name: "Iphone 17 pro max",
-    price: 1100,
-    isAvaliable: false
-  }
-
-  // productInfo.id
-
   return (
     <div>
-      <Toaster />
-       {/* <UserProfile fullName="John Doe" age={25} address="ktm"  />
-       <UserProfile fullName="Hari Sharma" age={26} address="btk" />
-       <UserProfile fullName="Alice Thapa" age={24} address="ktm" />
+      <Navbar />
+       <Routes>
+         <Route path="/" element={<HomePage />} />
+         <Route path="/about" element={<AboutPage />} />
+         <Route path="/contact" element={<ContactPage />} />
 
-       <hr />
-       <AdminProfile />
-       <AdminProfile /> */}
-
-
-       {/* <Product productInfo={productInfo} /> */}
-
-       {/* <Counter /> */}
-       {/* <State /> */}
-
-       {/* <RegisterForm /> */}
-       {/* <RegisterForm2 /> */}
-       <ReactHookForm />
+         {/* page not found - error page */}
+         <Route path="*" element={<PageNotFound />} />
+       </Routes>
     </div>
   )
 }
 
 export default App
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import AdminProfile from "./components/AdminProfile"
+// import Counter from "./components/Counter"
+// import Product from "./components/Product"
+// import ReactHookForm from "./components/ReactHookForm"
+// import RegisterForm from "./components/RegisterForm"
+// import RegisterForm2 from "./components/RegisterForm2"
+// import State from "./components/State"
+// import UserProfile from "./components/UserProfile"
+// import { Toaster } from "react-hot-toast"
+
+// const App = () => {
+//   const productInfo = {
+//     id: 101,
+//     name: "Iphone 17 pro max",
+//     price: 1100,
+//     isAvaliable: false
+//   }
+
+//   // productInfo.id
+
+//   return (
+//     <div>
+//       <Toaster />
+//        {/* <UserProfile fullName="John Doe" age={25} address="ktm"  />
+//        <UserProfile fullName="Hari Sharma" age={26} address="btk" />
+//        <UserProfile fullName="Alice Thapa" age={24} address="ktm" />
+
+//        <hr />
+//        <AdminProfile />
+//        <AdminProfile /> */}
+
+
+//        {/* <Product productInfo={productInfo} /> */}
+
+//        {/* <Counter /> */}
+//        {/* <State /> */}
+
+//        {/* <RegisterForm /> */}
+//        {/* <RegisterForm2 /> */}
+//        <ReactHookForm />
+//     </div>
+//   )
+// }
+
+// export default App
 
 
 
