@@ -35,9 +35,11 @@ const Navbar = () => {
           </div>
 
           {/* Login Button */}
-          <button className="bg-indigo-600 text-white px-5 py-2 rounded-lg hover:bg-indigo-700 transition">
+          <Link to="/login">
+             <button className="bg-indigo-600 text-white px-5 py-2 rounded-lg hover:bg-indigo-700 transition">
             Login
           </button>
+          </Link>
 
         </div>
       </div>

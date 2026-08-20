@@ -1,49 +1,34 @@
-import Navbar from "./components/Navbar"
-import {Routes,Route} from "react-router-dom"
-import HomePage from "./pages/HomePage"
-import AboutPage from "./pages/AboutPage"
-import ContactPage from "./pages/ContactPage"
-import PageNotFound from "./pages/PageNotFound"
+import Navbar from "./components/Navbar";
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
+import PageNotFound from "./pages/PageNotFound";
+import ProductDetailPage from "./pages/ProductDetailPage";
+import MainLayout from "./layout/MainLayout";
+import LoginPage from "./pages/LoginPage";
 
 const App = () => {
   return (
     <div>
-      <Navbar />
-       <Routes>
-         <Route path="/" element={<HomePage />} />
-         <Route path="/about" element={<AboutPage />} />
-         <Route path="/contact" element={<ContactPage />} />
+      <Routes>
+        {/* main layout */}
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/product/:id" element={<ProductDetailPage />} />
+          <Route path="/login" element={<LoginPage />} />
+        </Route>
 
-         {/* page not found - error page */}
-         <Route path="*" element={<PageNotFound />} />
-       </Routes>
+        {/* page not found - error page */}
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
     </div>
-  )
-}
+  );
+};
 
-export default App
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export default App;
 
 // import AdminProfile from "./components/AdminProfile"
 // import Counter from "./components/Counter"
@@ -76,7 +61,6 @@ export default App
 //        <AdminProfile />
 //        <AdminProfile /> */}
 
-
 //        {/* <Product productInfo={productInfo} /> */}
 
 //        {/* <Counter /> */}
@@ -90,44 +74,6 @@ export default App
 // }
 
 // export default App
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // const App = () => {
 //   const username = "Suresh Thapa"
