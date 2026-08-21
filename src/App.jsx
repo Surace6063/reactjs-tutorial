@@ -7,6 +7,9 @@ import PageNotFound from "./pages/PageNotFound";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import MainLayout from "./layout/MainLayout";
 import LoginPage from "./pages/LoginPage";
+import ProtectedRoute from "./utils/ProtectedRoute";
+import AdminDashboard from "./pages/AdminDashboard";
+import AdminRoute from "./utils/AdminRoute";
 
 const App = () => {
   return (
@@ -14,11 +17,20 @@ const App = () => {
       <Routes>
         {/* main layout */}
         <Route element={<MainLayout />}>
+          <Route element={<ProtectedRoute />}>
+              <Route path="/about" element={<AboutPage />} />
+          </Route>
           <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
+         
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/product/:id" element={<ProductDetailPage />} />
           <Route path="/login" element={<LoginPage />} />
+          
+
+          {/* admin route */}
+          <Route element={<AdminRoute />}>
+             <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          </Route>
         </Route>
 
         {/* page not found - error page */}

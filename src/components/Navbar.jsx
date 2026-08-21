@@ -32,6 +32,12 @@ const Navbar = () => {
             <div className="text-gray-700 hover:text-indigo-600 cursor-pointer font-medium">
               Contact
             </div>
+
+            <Link to="/admin/dashboard">
+              <div className="text-gray-700 hover:text-indigo-600 cursor-pointer font-medium">
+              Dashbaord
+            </div>
+            </Link>
           </div>
 
           {/* Login Button */}

@@ -1,6 +1,10 @@
+import ToolsList from "../components/home/ToolsList"
+
 const AboutPage = () => {
   return (
-    <div>This is About Page.</div>
+    <div>
+      <ToolsList />
+    </div>
   )
 }
 export default AboutPage
