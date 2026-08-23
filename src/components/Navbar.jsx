@@ -38,6 +38,12 @@ const Navbar = () => {
               Dashbaord
             </div>
             </Link>
+
+            <Link to="/useEffect">
+              <div className="text-gray-700 hover:text-indigo-600 cursor-pointer font-medium">
+              UseEffect
+            </div>
+            </Link>
           </div>
 
           {/* Login Button */}
