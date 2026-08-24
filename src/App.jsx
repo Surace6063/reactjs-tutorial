@@ -11,6 +11,7 @@ import ProtectedRoute from "./utils/ProtectedRoute";
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminRoute from "./utils/AdminRoute";
 import UseEffect from "./components/UseEffect";
+import ProductPage from "./pages/ProductPage";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
               <Route path="/about" element={<AboutPage />} />
           </Route>
           <Route path="/" element={<HomePage />} />
+          <Route path="/products" element={<ProductPage />} />
          
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/product/:id" element={<ProductDetailPage />} />

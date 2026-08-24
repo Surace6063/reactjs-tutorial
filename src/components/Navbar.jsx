@@ -25,9 +25,11 @@ const Navbar = () => {
             </div>
             </Link>
 
-            <div className="text-gray-700 hover:text-indigo-600 cursor-pointer font-medium">
-              Services
+            <Link to="/products">
+              <div className="text-gray-700 hover:text-indigo-600 cursor-pointer font-medium">
+              Products
             </div>
+            </Link>
 
             <div className="text-gray-700 hover:text-indigo-600 cursor-pointer font-medium">
               Contact
