@@ -1,21 +1,35 @@
 import { useParams } from "react-router-dom"
 import axios from "axios"
-import { useQuery } from "@tanstack/react-query"
+import { useEffect, useState } from "react"
 
-
-const ProductDetailPage = () => {
+const SingleProductPage = () => {
     // accessing id from url
     const {id} = useParams()
-  
-    // fetching single product
-    const {data:product,isLoading,error} = useQuery({
-     queryKey: ["product",id],
-     queryFn: async () => {
-      const response = await axios.get(`https://fakestoreapi.com/products/${id}`)
-      return response.data
-     }
-  })
 
+    const [product,setProduct] = useState(null)
+    const [isLoading,setIsLoading] = useState(false)
+    const [error,setError] = useState(null)
+
+     useEffect(() => {
+    // function to fetch api
+    const getProducts = async () => {
+      setError(null)
+      setIsLoading(true)
+      try {
+        const response = await axios.get(
+          `https://fakestoreapi.com/products/${id}`
+        )
+        console.log(response.data)
+        setProduct(response.data)
+        setIsLoading(false)  // setting isLoading to false after getting data
+      } catch (error) {
+        console.log(error)
+        setError(error?.response?.message || "Error fetching data!")
+        setIsLoading(false)
+      }
+    }
+    getProducts()
+  }, [id])
 
   if(isLoading) return <p>loading...</p>
   if(error) return <p>{error}</p>
@@ -150,6 +164,6 @@ const ProductDetailPage = () => {
   </div>
 )
 }
-export default ProductDetailPage
+export default SingleProductPage
 
 

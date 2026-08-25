@@ -14,7 +14,7 @@ const ProductPage = () => {
       setIsLoading(true)
       try {
         const response = await axios.get(
-          "https://api.escuelajs.co/api/v1/products"
+          "https://fakestoreapi.com/products"
         )
         console.log(response.data)
         setProducts(response.data)
