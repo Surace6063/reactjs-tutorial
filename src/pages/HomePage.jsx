@@ -1,6 +1,7 @@
 import HeroSection from "../components/home/HeroSection"
 import ToolsList from "../components/home/ToolsList"
 import TodoList from "../components/TodoList"
+import UserList from "../components/UserList"
 
 const HomePage = () => {
   return (
@@ -9,6 +10,8 @@ const HomePage = () => {
       <ToolsList /> */}
 
       <TodoList />
+
+      <UserList />
     </div>
   )
 }

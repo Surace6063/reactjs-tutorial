@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const registerValidationSchema = yup.object({
   email: yup
@@ -28,12 +29,15 @@ const navigate = useNavigate()
   });
 
   // function to handle form submit
-  const handleRegister = (data) => {
-    console.log(data);
-    toast.success("User registered sucessfully!");
-    reset();
-    navigate("/")
-  };
+  const handleRegister = async (data) => {
+    try {
+      await axios.post("http://localhost:3000/users",data)
+      toast.success("User created sucessfully.")
+      navigate("/")
+    } catch (error) {
+      console.log(error);
+    } 
+  }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-50 px-4 py-12">

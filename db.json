@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "email": "sureshthapa6063@gmail.com",
+      "password": "Suresh@123",
+      "id": "qlQBL_oxnjc"
+    },
+    {
+      "email": "zoro@gmail.com",
+      "password": "Zoro@123",
+      "id": "LS0WCbL0wYw"
+    },
+    {
+      "email": "info@wust.edu",
+      "password": "Suresh@123",
+      "id": "X_SPgnOf-xI"
+    },
+    {
+      "email": "luffy@gmail.com",
+      "password": "Luffy@123",
+      "id": "NTXKHJ-8EoA"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
