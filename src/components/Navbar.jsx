@@ -1,8 +1,13 @@
+import { ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useQuantity } from "../context/QuantityContext";
 
 const Navbar = () => {
+  // accessing quantity state from QuantityContext
+  const {quantity} = useQuantity()
+
   return (
-    <nav className="bg-white border-b border-gray-200">
+    <nav className="bg-white border-b border-gray-200 sticky top-0">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
 
@@ -54,6 +59,11 @@ const Navbar = () => {
             Login
           </button>
           </Link>
+
+          <div className="flex gap-1 items-center">
+            <ShoppingCart />
+            <span>({quantity})</span>
+          </div>
 
         </div>
       </div>
