@@ -1,7 +1,8 @@
 import { Navigate, Outlet } from "react-router-dom"
+import useAuthStore from "../zustand/AuthStore"
 
 const ProtectedRoute = () => {
-    const isLoggedIn = true
+    const {isLoggedIn} = useAuthStore()
    
     // if user is not loggedIn, redirect user to login page
    if(!isLoggedIn){

@@ -19,6 +19,21 @@
       "email": "luffy@gmail.com",
       "password": "Luffy@123",
       "id": "NTXKHJ-8EoA"
+    },
+    {
+      "email": "sureshthapa6063@gmail.com",
+      "password": "Suresh@123",
+      "id": "rJ6X0QLMseA"
+    },
+    {
+      "email": "abc@gmail.com",
+      "password": "Abc@1234",
+      "id": "jnBrTPh1c4g"
+    },
+    {
+      "email": "info@wust.edu",
+      "password": "Abc@12345",
+      "id": "LcMM4Jwx6iE"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -1,39 +1,43 @@
 import { ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useQuantity } from "../context/QuantityContext";
+import useQuantityStore from "../zustand/QuantityStore";
+import useAuthStore from "../zustand/AuthStore";
 
 const Navbar = () => {
   // accessing quantity state from QuantityContext
-  const {quantity} = useQuantity()
+  // const {quantity} = useQuantity()
+
+  // accessing quantity value from zustand
+  const { quantity } = useQuantityStore();
+
+  const {isLoggedIn,user,logout} = useAuthStore()
 
   return (
     <nav className="bg-white border-b border-gray-200 sticky top-0">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
-
           {/* Logo */}
-          <div className="text-2xl font-bold text-indigo-600">
-            MyLogo
-          </div>
+          <div className="text-2xl font-bold text-indigo-600">MyLogo</div>
 
           {/* Navigation */}
           <div className="hidden md:flex items-center gap-8">
             <Link to="/">
               <div className="text-gray-700 hover:text-indigo-600 cursor-pointer font-medium">
-              Home
-            </div>
+                Home
+              </div>
             </Link>
 
             <Link to="/about">
               <div className="text-gray-700 hover:text-indigo-600 cursor-pointer font-medium">
-              About
-            </div>
+                About
+              </div>
             </Link>
 
             <Link to="/products">
               <div className="text-gray-700 hover:text-indigo-600 cursor-pointer font-medium">
-              Products
-            </div>
+                Products
+              </div>
             </Link>
 
             <div className="text-gray-700 hover:text-indigo-600 cursor-pointer font-medium">
@@ -42,33 +46,40 @@ const Navbar = () => {
 
             <Link to="/admin/dashboard">
               <div className="text-gray-700 hover:text-indigo-600 cursor-pointer font-medium">
-              Dashbaord
-            </div>
+                Dashbaord
+              </div>
             </Link>
 
             <Link to="/useEffect">
               <div className="text-gray-700 hover:text-indigo-600 cursor-pointer font-medium">
-              UseEffect
-            </div>
+                UseEffect
+              </div>
             </Link>
           </div>
 
           {/* Login Button */}
-          <Link to="/login">
-             <button className="bg-indigo-600 text-white px-5 py-2 rounded-lg hover:bg-indigo-700 transition">
-            Login
-          </button>
-          </Link>
+
+          {!isLoggedIn ? (
+            <Link to="/login">
+              <button className="bg-indigo-600 text-white px-5 py-2 rounded-lg hover:bg-indigo-700 transition">
+                Login
+              </button>
+            </Link>
+          ) : (
+            <div className="space-x-2">
+              <span>{user?.email}</span>
+              <button onClick={() => logout()} className="btn">logout</button>
+            </div>
+          )}
 
           <div className="flex gap-1 items-center">
             <ShoppingCart />
             <span>({quantity})</span>
           </div>
-
         </div>
       </div>
     </nav>
   );
 };
 
-export default Navbar
+export default Navbar;

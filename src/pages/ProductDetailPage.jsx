@@ -2,11 +2,15 @@ import { useParams } from "react-router-dom"
 import axios from "axios"
 import { useQuery } from "@tanstack/react-query"
 import { useQuantity } from "../context/QuantityContext"
+import useQuantityStore from "../zustand/QuantityStore"
 
 
 const ProductDetailPage = () => {
-  const {quantity,increaseQuantity,decreaseQuantity} = 
-  useQuantity()
+  // const {quantity,increaseQuantity,decreaseQuantity} = 
+  // useQuantity()
+
+  // accessing quantity value from zustand
+  const {quantity,increaseQuantity,decreaseQuantity} = useQuantityStore()
   
     // accessing id from url
     const {id} = useParams()
@@ -101,7 +105,7 @@ const ProductDetailPage = () => {
                 {quantity}
               </span>
 
-              <button onClick={increaseQuantity} className="px-4 py-2 text-xl text-gray-600 hover:bg-gray-100">
+              <button onClick={increaseQuantity}  className="px-4 py-2 text-xl text-gray-600 hover:bg-gray-100">
                 +
               </button>
             </div>

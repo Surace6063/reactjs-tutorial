@@ -4,6 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import useAuthStore from "../zustand/AuthStore";
 
 const registerValidationSchema = yup.object({
   email: yup
@@ -18,6 +19,7 @@ const registerValidationSchema = yup.object({
 
 const LoginPage = () => {
 const navigate = useNavigate()
+const {login} = useAuthStore()
 
   const {
     register,
@@ -34,6 +36,7 @@ const navigate = useNavigate()
       await axios.post("http://localhost:3000/users",data)
       toast.success("User created sucessfully.")
       navigate("/")
+      login(data)
     } catch (error) {
       console.log(error);
     } 
