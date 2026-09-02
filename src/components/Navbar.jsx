@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useQuantity } from "../context/QuantityContext";
 import useQuantityStore from "../zustand/QuantityStore";
 import useAuthStore from "../zustand/AuthStore";
+import Button from "./ui/button";
 
 const Navbar = () => {
   // accessing quantity state from QuantityContext
@@ -61,9 +62,9 @@ const Navbar = () => {
 
           {!isLoggedIn ? (
             <Link to="/login">
-              <button className="bg-indigo-600 text-white px-5 py-2 rounded-lg hover:bg-indigo-700 transition">
-                Login
-              </button>
+              <Button variant="secondary">
+                Login 
+              </Button>
             </Link>
           ) : (
             <div className="space-x-2">

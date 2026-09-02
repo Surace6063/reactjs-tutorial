@@ -5,6 +5,7 @@ import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import useAuthStore from "../zustand/AuthStore";
+import Input from "../components/ui/input";
 
 const registerValidationSchema = yup.object({
   email: yup
@@ -63,13 +64,12 @@ const {login} = useAuthStore()
               >
                 Email address
               </label>
-              <input
+              <Input
                 id="email"
                 name="email"
                 type="email"
                 {...register("email")}
                 placeholder="jane@company.com"
-                className="w-full rounded-lg border border-slate-300 py-2.5 px-3 text-sm text-slate-900 placeholder-slate-400 outline-none transition focus:border-slate-400 focus:ring-2 focus:ring-slate-900/10"
               />
               {errors.email && (
                 <p className="text-sm text-red-700 mt-1">
@@ -85,13 +85,12 @@ const {login} = useAuthStore()
               >
                 Password
               </label>
-              <input
+              <Input
                 id="password"
                 name="password"
                 type="password"
                 {...register("password")}
                 placeholder="At least 8 characters"
-                className="w-full rounded-lg border border-slate-300 py-2.5 px-3 text-sm text-slate-900 placeholder-slate-400 outline-none transition focus:border-slate-400 focus:ring-2 focus:ring-slate-900/10"
               />
               {errors.password && (
                 <p className="text-sm text-red-700 mt-1">
