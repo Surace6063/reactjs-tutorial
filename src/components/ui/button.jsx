@@ -9,7 +9,7 @@ const Button = ({
 }) => {
   const variants = {
     primary: "bg-slate-800 text-white",
-    secondary: "bg-purple-700 text-white",
+    secondary: "bg-primary text-white",
     outline: "border border-slate-300 text-slate-700",
   }
 

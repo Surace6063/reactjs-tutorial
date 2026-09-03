@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme{
+    --color-primary: #7FFFD4;
+}
+
 
 .btn{
     @apply bg-slate-800 text-white px-6 py-2 rounded-md 

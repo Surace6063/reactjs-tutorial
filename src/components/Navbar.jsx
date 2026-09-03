@@ -19,7 +19,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="text-2xl font-bold text-indigo-600">MyLogo</div>
+          <div className="text-2xl font-bold text-primary">MyLogo</div>
 
           {/* Navigation */}
           <div className="hidden md:flex items-center gap-8">
