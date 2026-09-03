@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useQuantity } from "../context/QuantityContext";
 import useQuantityStore from "../zustand/QuantityStore";
 import useAuthStore from "../zustand/AuthStore";
-import Button from "./ui/button";
+import { Button } from "@/components/ui/button"
 
 const Navbar = () => {
   // accessing quantity state from QuantityContext
